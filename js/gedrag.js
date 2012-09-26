@@ -6,20 +6,20 @@ var ImageData = Backbone.Model.extend({
   }
 });
 
+
 var ImageView = Backbone.View.extend({
   initialize: function(){
-    this.template = _.template($('#imageBinTemplate').html);
+    this.template = $('#imageBinTemplate').html();
   },
 
   render: function(){
-    var imageContent = this.template(this.model.toJSON())
-    this.$el.html(imageContent)
+    console.log(this.template);
+    var imageContent = _.template(this.template, this.model.toJSON());
+    console.log('imageContent = ' + imageContent)
+    this.$el.html(imageContent);
     return this;
   }
 });
-
-
-
 
 
 var LeForm = Backbone.View.extend({
@@ -35,7 +35,6 @@ var LeForm = Backbone.View.extend({
     var putCaptionTop = this.$el.find('#putCaptionTop').val();
     var putCaptionBottom = this.$el.find('#putCaptionBottom').val();
   }
-
 });
 
 
@@ -44,19 +43,23 @@ var Router = Backbone.Router.extend({
     '': 'landing',
     '*magia': 'params'
   },
+
   initialize: function(){
     var leform = new LeForm;
     var imageData = new ImageData;
-    var imageView = new ImageView({model: 'imageData'});
+    var imageView = new ImageView({model: imageData});
 
-    $('[role="main"]').html(imageView.render().$el)
+    $('[role="main"]').append(imageView.render().el)
   },
+
   landing: function(){
     console.log('esto es la landing');
   },
+
   params: function(magia){
     console.log(magia);
   },
+
   start: function(){
     console.log('arranco la cosa esta del router');
     Backbone.history.start();
