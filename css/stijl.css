@@ -1,3 +1,11 @@
+/* DrummerHead wuz here */
+
+
+
+
+/* Baseline
+ * ------------- */
+
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -8,6 +16,29 @@ body {
   background-color: #222;
   font-family: sans-serif;
 }
+/* /Baseline */
+
+
+
+
+/* Modular Constructs
+ * ------------- */
+
+.absoluteVodka {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* /Modular Constructs */
+
+
+
+
+/* Form
+ * ------------- */
+
 [role='banner'] {
 }
 #leForm {
@@ -51,18 +82,23 @@ body {
   bottom: 14%;
   font-size: 1.1em;
 }
+/* /Form */
+
+
+
+
+/* Image and captions
+ * ------------- */
+
 [role='main'] {
-  padding: 2em 0;
+  top: 5em;
 }
 #imageBin {
-  position: relative;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 55em;
 }
-#memeIsMe {
-  width: 100%;
+#imageBin img {
   display: block;
+  margin: 0 auto;
+  height: 100%;
 }
 #captionTop,
 #captionBottom {
@@ -85,8 +121,14 @@ body {
 #captionBottom {
   bottom: .5em;
 }
+/* /Image and captions */
+
 
 /* TODO: also agregar coso coso demotivational poster, onda unos borders negros y la type abajo en times y toda la onda, should provide no problem. Mate */
+
+
+/* Media queries
+ * ------------- */
 
 @media (max-width: 1077px){
   #leForm li {
@@ -122,3 +164,12 @@ body {
     font-size: 2em;
   }
 }
+/* /Media queries */
+
+
+
+
+/* x
+ * ------------- */
+
+/* /x */

@@ -8,6 +8,12 @@ var ImageData = Backbone.Model.extend({
 
 
 var ImageView = Backbone.View.extend({
+  tagName: 'div',
+
+  id: 'imageBin',
+
+  className: 'absoluteVodka',
+
   initialize: function(){
     this.template = $('#imageBinTemplate').html();
   },
